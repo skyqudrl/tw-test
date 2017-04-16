@@ -1,0 +1,27 @@
+{
+  "name": "tw-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tawon2137/tw-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tawon2137/tw-test/issues"
+  },
+  "homepage": "https://github.com/tawon2137/tw-test#readme",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "excel-parser": "^0.2.2",
+    "exceljs": "^0.4.3",
+    "express": "^4.15.2",
+    "node-xlsx": "^0.7.4",
+    "xlsx": "^0.9.10"
+  }
+}
