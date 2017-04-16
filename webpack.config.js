@@ -1,11 +1,17 @@
 'use strict';
+
 const config = {
-  entry: './src/app/app.js',
+  entry: './src/app.js',
   output: {
     path: __dirname + '/dist',
     filename: 'app.bundle.js'
   },
-  plugins: []
+  plugins: [],
+  module: {
+    loaders : [
+      { test: /\.html$/, loader: "html-loader" },
+    ]
+  }
 };
 
 

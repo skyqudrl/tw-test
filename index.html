@@ -8,21 +8,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./libs/TW/TW.css">
 </head>
+<style>
+  .nav-item{
+    display : inline-block;
+    text-align : center;
+    font-weight : bold;
+    font-size : 1.3rem;
+    cursor : pointer;
+    box-shadow : 1px 1px 2px 0px rgba(0,0,0, 0.15);
+    height : 30px;
+    line-height : 30px;
+  }
+</style>
 <body>
 
-<header class="indigo-a-3">
-    <div class="tw-navbar">
+<header ng-controller='naviCtrl as navi'>
+    <div class="tw-navbar orange">
         <ul class="container">
-            <li class="logoTitle left" id="header-title">맛 위키</li>
+            <li class="logoTitle left white-text" id="header-title">맛 위키</li>
         </ul>
     </div>
-</header>
-<main class="grey-l-4">
     <div class="container row">
-        <a class="tw-btn-large waves-effect col s4 grey-d-1 white-text" >뷰1</a>
-        <a class="tw-btn-large waves-effect col s4 grey-d-1 white-text" >뷰2</a>
-        <a class="tw-btn-large waves-effect col s4 grey-d-1 white-text" >뷰3</a>
+        <div class="nav-item waves-effect green-l-3 white-text" data-waveColor='green' ng-repeat="data in navi.navigationList" style='width:20%;'  ui-sref="{{data.name}}"  >{{data.name}}</div>
     </div>
+</header>
+<main>
+     <ui-view></ui-view>
 </main>
 
 
