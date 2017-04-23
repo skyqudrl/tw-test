@@ -1,6 +1,6 @@
 module.exports = function () {
   this.navigationList = [
-    { name : 'main', icon : 'logo' },
+    { name : 'main', icon : '' },
     { name : 'around', icon : 'logo' },
     { name : 'search', icon : 'logo' },
     { name : 'create', icon : 'logo' },

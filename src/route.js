@@ -11,7 +11,7 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
   })
   .state('around', {
     url : "/around",
-    template : '<around></around>',
+    templateR : '<around></around>',
   })
   .state('search', {
     url : "/search",

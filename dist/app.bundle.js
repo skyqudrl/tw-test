@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 15);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -4759,7 +4759,7 @@ angular.module('ui.router.state')
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(6);
+__webpack_require__(9);
 module.exports = angular;
 
 
@@ -4767,21 +4767,56 @@ module.exports = angular;
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var aroundController = function () {
+var aroundController = function ($http) {
+    $http.get('http://naver.com');
     this.message = '여기는 around';
+    this.arr = [1, 2, 3];
 }
 
 module.exports = angular
     .module('matWiki.around', [])
     .component('around', {
       controller : aroundController,
-      template : __webpack_require__(7)
+      template : __webpack_require__(10)
     })
     .name;
 
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+module.exports = function () {
+  this.navigationList = [
+    { name : 'main', icon : '' },
+    { name : 'around', icon : 'logo' },
+    { name : 'search', icon : 'logo' },
+    { name : 'create', icon : 'logo' },
+    { name : 'my', icon : 'logo' }
+  ]
+}
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Controller = function () {
+    this.message = '여기는 create';
+}
+
+
+module.exports = angular
+    .module('matWiki.create', [])
+    .component('create', {
+      controller : Controller,
+      template : __webpack_require__(11)
+    })
+    .name;
+
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Controller = function () {
@@ -4793,14 +4828,31 @@ module.exports = angular
     .module('matWiki.main', [])
     .component('index', {
       controller : Controller,
-      template : __webpack_require__(8)
+      template : __webpack_require__(12)
     })
     .name;
 
 
 /***/ }),
-/* 4 */,
-/* 5 */
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Controller = function () {
+    this.message = '여기는 my';
+}
+
+
+module.exports = angular
+    .module('matWiki.my', [])
+    .component('my', {
+      controller : Controller,
+      template : __webpack_require__(13)
+    })
+    .name;
+
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports) {
 
 
@@ -4816,7 +4868,7 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
   })
   .state('around', {
     url : "/around",
-    template : '<around></around>',
+    templateR : '<around></around>',
   })
   .state('search', {
     url : "/search",
@@ -4834,7 +4886,25 @@ module.exports = function ($stateProvider, $urlRouterProvider) {
 
 
 /***/ }),
-/* 6 */
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Controller = function () {
+    this.message = '여기는 search';
+}
+
+
+module.exports = angular
+    .module('matWiki.search', [])
+    .component('search', {
+      controller : Controller,
+      template : __webpack_require__(14)
+    })
+    .name;
+
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports) {
 
 /**
@@ -38211,131 +38281,62 @@ $provide.value("$locale", {
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ }),
-/* 7 */
+/* 10 */
 /***/ (function(module, exports) {
 
-module.exports = "<p>{{$ctrl.message}}</p>\r\n";
+module.exports = "<p ng-repeat=\"data in $ctrl.arr\">{{data}}</p>";
 
 /***/ }),
-/* 8 */
+/* 11 */
 /***/ (function(module, exports) {
 
-module.exports = "<p>{{$ctrl.message}}</p>\r\n";
+module.exports = "<p>{{$ctrl.message}}</p>\n";
 
 /***/ }),
-/* 9 */
+/* 12 */
+/***/ (function(module, exports) {
+
+module.exports = "<p>{{$ctrl.message}}</p>\n";
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+module.exports = "<p>{{$ctrl.message}}</p>\n";
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+module.exports = "<p>{{$ctrl.message}}</p>\n";
+
+/***/ }),
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var angular = __webpack_require__(1);
-var route = __webpack_require__(5);
+var route = __webpack_require__(7);
 __webpack_require__(0);
 
 var aroundComponent = __webpack_require__(2);
-var mainComponent = __webpack_require__(3);
-var searchComponent = __webpack_require__(11);
-var createComponent = __webpack_require__(13);
-var myComponent = __webpack_require__(15);
+var mainComponent = __webpack_require__(5);
+var searchComponent = __webpack_require__(8);
+var createComponent = __webpack_require__(4);
+var myComponent = __webpack_require__(6);
 
 
           angular
               .module('matWiki', ['ui.router', aroundComponent, mainComponent, searchComponent, createComponent, myComponent])
               .config(route)
-              .controller('naviCtrl', __webpack_require__(10))
+              .controller('naviCtrl', __webpack_require__(3))
 
 
 angular.bootstrap(document, ['matWiki'], {
 });
 
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
-module.exports = function () {
-  this.navigationList = [
-    { name : 'main', icon : 'logo' },
-    { name : 'around', icon : 'logo' },
-    { name : 'search', icon : 'logo' },
-    { name : 'create', icon : 'logo' },
-    { name : 'my', icon : 'logo' }
-  ]
-}
-
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Controller = function () {
-    this.message = '여기는 search';
-}
-
-
-module.exports = angular
-    .module('matWiki.search', [])
-    .component('search', {
-      controller : Controller,
-      template : __webpack_require__(12)
-    })
-    .name;
-
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports) {
-
-module.exports = "<p>{{$ctrl.message}}</p>\r\n";
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Controller = function () {
-    this.message = '여기는 create';
-}
-
-
-module.exports = angular
-    .module('matWiki.create', [])
-    .component('create', {
-      controller : Controller,
-      template : __webpack_require__(14)
-    })
-    .name;
-
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports) {
-
-module.exports = "<p>{{$ctrl.message}}</p>\r\n";
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Controller = function () {
-    this.message = '여기는 my';
-}
-
-
-module.exports = angular
-    .module('matWiki.my', [])
-    .component('my', {
-      controller : Controller,
-      template : __webpack_require__(16)
-    })
-    .name;
-
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports) {
-
-module.exports = "<p>{{$ctrl.message}}</p>\r\n";
 
 /***/ })
 /******/ ]);
