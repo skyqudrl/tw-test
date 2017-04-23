@@ -38290,25 +38290,25 @@ module.exports = "<p ng-repeat=\"data in $ctrl.arr\">{{data}}</p>";
 /* 11 */
 /***/ (function(module, exports) {
 
-module.exports = "<p>{{$ctrl.message}}</p>\n";
+module.exports = "<p>{{$ctrl.message}}</p>\r\n";
 
 /***/ }),
 /* 12 */
 /***/ (function(module, exports) {
 
-module.exports = "<p>{{$ctrl.message}}</p>\n";
+module.exports = "<p>{{$ctrl.message}}</p>\r\nsssssdasdasd";
 
 /***/ }),
 /* 13 */
 /***/ (function(module, exports) {
 
-module.exports = "<p>{{$ctrl.message}}</p>\n";
+module.exports = "<p>{{$ctrl.message}}</p>\r\n";
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports) {
 
-module.exports = "<p>{{$ctrl.message}}</p>\n";
+module.exports = "<p>{{$ctrl.message}}</p>\r\n";
 
 /***/ }),
 /* 15 */
